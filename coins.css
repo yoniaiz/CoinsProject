@@ -1,0 +1,395 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: whitesmoke;
+    font-family: 'Slabo 27px', serif;
+    overflow:visible;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+/* image style */
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    opacity: 1;
+    transition: 0s;
+}
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+    width: 105%;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 18px 39px -2px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 18px 39px -2px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 18px 39px -2px rgba(0, 0, 0, 0.34);
+}
+
+#searchIcon {
+    position: absolute;
+    color: #3AD48C;
+    text-align: center;
+    font-size: 21px;
+    margin-top: 32%;
+    transition: 0.4s;
+    top: -184%;
+    left: 200px;
+}
+
+#searchIcon:hover {
+    font-size: 22px;
+    color: rgba(36, 124, 128, 0.8) !important;
+}
+
+#searchCoin {
+    background-color: transparent;
+    font-size: 17px;
+    padding: 10px;
+    margin-top: 3%;
+    color: rgba(36, 124, 128, 0.8);
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+#searchCoin:focus {
+    border-color: rgba(45, 154, 158, 0.8);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset, 0 0 0 rgba(45, 154, 158, 0.6);
+}
+
+a {
+    font-size: 17px;
+    color: rgb(45, 158, 105);
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+a:active {
+    color: rgba(45, 154, 158, 0.8);
+}
+
+a:hover {
+    color: rgba(45, 154, 158, 0.8);
+}
+
+/* the toggle button */
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 78%;
+    top: 9%;
+    z-index: 100;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* slider of toggle button */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: rgb(45, 158, 105);
+}
+
+
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.card {
+    margin-left: 0;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(252, 249, 249);
+    border: none;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 4%;
+    animation-name: popup;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes popup {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 200px;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.card-title {
+    font-size: 30px;
+    color: rgb(45, 158, 105);
+    animation-name: show;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.card-subtitle {
+    margin-top: 15px;
+    font-size: 20px;
+    animation-name: show;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.card .btn {
+    position: relative;
+    font-size: 18px;
+    top: 65px;
+    border-radius: 7%;
+    transition: 0.7s;
+    animation-name: show;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+#coinCard {
+    display: none;
+    transition: 0.5s;
+}
+
+.flip {
+    -webkit-perspective: 800;
+    perspective: 800;
+    position: relative;
+}
+
+.flip .card.flipped {
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+}
+
+.flip .card {
+    width: 100%;
+    height: 200px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #fff;
+
+}
+
+.flip .card .face {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.flip .card .front {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.flip .card .back {
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+    position: absolute;
+}
+
+.flip .card .back h1 {
+    color: rgb(45, 158, 105);
+
+}
+
+.flip .card .back .img-fluid {
+    margin-top: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+.flip .card .back .btn {
+    position: absolute;
+    right: 80%;
+    top: 158px;
+}
+
+.inner {
+    margin: 0px !important;
+    width: 100%;
+}
+
+.fullCoinArray {
+    color: rgb(158, 45, 98);
+    font-size: 20px;
+    position: absolute;
+    top: 90px;
+    left: 4px;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.fullCoinArray:hover {
+    color: rgb(45, 158, 105) !important;
+}
+
+.fullCoinArray:focus {
+    color: rgb(158, 45, 98) !important;
+}
+
+#coins {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.about {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+    visibility: hidden;
+    text-align: center;
+    top: 15%;
+}
+
+.aboutHeadLine {
+    color: #3AD48C;
+    font-size: 70px;
+    text-decoration: underline;
+}
+
+.aboutText {
+    color: rgb(25, 124, 78);
+    font-size: 40px;
+}
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+.modal-title {
+    margin-left: 30%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.modal-content {
+    background-color: rgba(131, 131, 131, 0.9);
+}
+
+#closeBtn:hover {
+    color: rgba(131, 131, 131, 0.9);
+}
+
+.canvasDiv {
+    width: 95%;
+    height: 75vh;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 60px;
+    left: 2%;
+}
